@@ -99,7 +99,9 @@
                       &trans     &trans    &trans    &trans     &trans     &trans  &trans    &trans    &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         raise_layer {
