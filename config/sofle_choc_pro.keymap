@@ -34,7 +34,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
-            quick-tap-ms = <210>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <180>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
@@ -48,7 +48,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
-            quick-tap-ms = <210>;
+            quick-tap-ms = <300>;
             require-prior-idle-ms = <180>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
@@ -74,6 +74,7 @@
         mouselayer {
             bindings = <&mo 3>;
             key-positions = <16 15 14>;
+            layers = <0>;
         };
     };
 
@@ -112,11 +113,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&trans  &trans  &trans          &trans        &trans     &trans                  &trans        &trans        &trans        &trans        &trans  &trans
-&trans  &trans  &trans          &kp UP_ARROW  &trans     &trans  &trans                        &kp N7        &kp N8        &kp N9        &trans  &trans
-&trans  &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &trans  &trans                        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
-&trans  &trans  &trans          &trans        &trans     &trans  &trans  &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                &trans          &trans        &trans     &trans  &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans
+&trans  &trans        &trans          &trans           &trans       &trans                         &trans        &trans        &trans        &trans        &trans  &trans
+&trans  &trans        &trans          &kp UP_ARROW     &trans       &trans         &trans                        &kp N7        &kp N8        &kp N9        &trans  &trans
+&trans  &kp LS(LEFT)  &kp LEFT_ARROW  &kp DOWN         &kp RIGHT    &kp LS(RIGHT)  &trans                        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &trans
+&trans  &trans        &kp PAGE_DOWN   &kp PRINTSCREEN  &kp PAGE_UP  &trans         &trans  &trans  &trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                      &trans          &trans           &trans       &trans         &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans
             >;
 
             sensor-bindings =
