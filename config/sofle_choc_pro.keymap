@@ -7,6 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -15,6 +18,11 @@
 #define RAISE 2
 #define ADJUST 3
 #define MOUSE 6
+
+&mmv {
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <1>;
+};
 
 / {
     // Activate ADJUST layer by pressing raise and lower
