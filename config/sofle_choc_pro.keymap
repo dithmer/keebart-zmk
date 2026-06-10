@@ -14,6 +14,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define MOUSE 6
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -73,7 +74,7 @@
         compatible = "zmk,combos";
 
         mouselayer {
-            bindings = <&mo 3>;
+            bindings = <&mo 6>;
             key-positions = <15 14>;
             layers = <0>;
             timeout-ms = <150>;
@@ -177,6 +178,18 @@
 &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans                  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        mouse {
+            display-name = "mouse";
+
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                             &trans  &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                             &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT                     &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans     &trans  &trans          &trans        &trans           &trans  &trans
+                &trans  &trans  &trans  &trans  &mkp LCLK       &mkp RCLK  &trans  &trans          &trans        &trans
             >;
         };
     };
