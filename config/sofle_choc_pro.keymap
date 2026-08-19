@@ -4,7 +4,7 @@
 * SPDX-License-Identifier: MIT
 */
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 3000
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -19,8 +19,11 @@
 #define MOUSE 6
 
 &mmv {
-    time-to-max-speed-ms = <500>;
+    // Peak is ZMK_POINTING_DEFAULT_MOVE_VAL px/s; precision on short taps comes from the
+    // initial acceleration, which is peak / time-to-max-speed-ms. Raise both together.
+    time-to-max-speed-ms = <700>;
     acceleration-exponent = <1>;
+    trigger-period-ms = <8>;
 };
 
 / {
